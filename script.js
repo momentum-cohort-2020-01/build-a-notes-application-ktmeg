@@ -18,12 +18,17 @@ function getAllNotes () {
 console.log('get all notes working')
 
 function createNotesHTML (notes) {
+  console.log('notes', notes)
   return `<ul id="notes-list">${notes.map(note => `<li${note.note}</li>`).join('')}</ul>`
 }
 console.log('create Notes HTML function working')
 
 function createNoteHTML (note) {
-  return `<li data-note-id=${note.note}<button class="delete"><img src="https://www.pngkit.com/png/detail/254-2544941_manage-the-delete-button-of-the-receiving-address.png"></button></li>`
+  return `
+        <li data-note-id=${note.note}>
+            <button class="delete" style="background: url(https://www.pngkit.com/png/detail/254-2544941_manage-the-delete-button-of-the-receiving-address.png)"></button>
+        </li>
+    `
 }
 // can't get pic to show up??//
 console.log('button working')
@@ -46,7 +51,7 @@ function renderNotesList (notes) {
 console.log('render notes list working')
 
 function renderNewNote (note) {
-  const noteHTML = createNoteHTML
+  const noteHTML = createNoteHTML(note)
   const notesList = document.querySelector('#notes-list')
   notesList.insertAdjacentHTML('beforeend', noteHTML)
 }
@@ -67,7 +72,7 @@ q('#new-notes-form').addEventListener('submit', event => {
 
 console.log('add event listener working')
 
-q('#notes').addEventListener('click', event => {
+q('#notes').addEventListener = ('click', event => {
     //need to add 'event'?//
   if (event.target.matches('.delete')) {
     print('delete' + event.target.parentElement.dataset.noteID)
