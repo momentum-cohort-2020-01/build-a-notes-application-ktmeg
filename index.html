@@ -5,8 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Shadows+Into+Light&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+
+
 </head>
 <body>
+  <main class="section">
+    <h1 class="header">
+      Notes
+    </h1>
+  
+    <form id="notes-form" class="form">
+
+    <label for="notes-text">Create a <br> new note</label>
+    <input type="text" id="notes-text" required>
+    
+
+    <div>
+      <button type="submit">Add note</button>
+    </div>
+
+   </form>
+   <section id="notes" class="notes">
+
+   </section>
+  </main>
   
 </body>
 </html>

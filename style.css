@@ -1,0 +1,49 @@
+.main {
+    display: flex;
+}
+.header {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 5rem;
+    color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: .3rem dashed darkslategray;
+    background-color:lightcyan;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: darkslategray;
+    font-size: 1.8rem;
+}
+
+.form button {
+    font-size: 100%;
+    font-family: 'Quicksand', sans-serif;
+    color: darkslategray;
+    border: .1rem solid darkslategray;
+    border-radius: 10px;
+    padding: .5rem;
+    margin: .25rem;
+    background-color: lightcyan;
+}
+
+.form input {
+    padding: .5rem;
+    width: 50%;
+    font-size: 100%;
+    margin: .5rem;
+    border: .1rem solid darkslategray;
+}
+
+.notes {
+    font-family: 'Quicksand', sans-serif;
+    color: orangered;
+
+}
+
