@@ -19,16 +19,23 @@ function postNewNote (note) {
     body: JSON.stringify({
       title: note.title,
       body: note.body,
-      created: moment().format()
+      created: moment().format('MMMM Do YYYY, h:mm:ss a')
     })
   }).then(response => response.json())
 }
 
+// function deleteNote (note) {
+//   return fetch('http://localhost:3000/notes/' + `${note.id}`, {
+//     method: 'DELETE',
+//     headers: { 'Content-Type': 'application/json' }
+//   }).then(response => q(`${note.id}`).remove())
+// }
+
+// **WORK ON THIS**
 function deleteNote (note) {
   return fetch(`http://localhost:3000/notes/${note.id}`, {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' }
-  }).then(response => q(`#${note.id}`).remove())
+    method: 'DELETE'
+  })
 }
 // Build/Render notes
 // making an UL for the notes //
@@ -88,11 +95,13 @@ q('#notes-form').addEventListener('submit', event => {
   postNewNote(newNote).then(renderNewNote)
 })
 
-// q('#notes').addEventListener('click', (event, note) => {
-//   if (event.target.matches('#delete-note')) {
-//     // TODO send AJAX request to delete todo
-//       const noteEl = q(`#${note.id}`)
-//       deleteNote(noteEl).then(renderNotes)
-//     // TODO remove li with dataset-todo-id equal to id from the DOM
-//   }
-// })
+//**WORK ON THIS */
+q('#notes').addEventListener('click', (event, note) => {
+  if (event.target.matches('#delete-note')) {
+    deleteNote(event.target.parentElement.parentElement.dataset.note)
+    // const noteEl = q(`${note.id}`)
+    // deleteNote(noteEl).then(renderNotes)
+    // TODO send AJAX request to delete todo -- can't get 
+    // TODO remove li with dataset-todo-id equal to id from the DOM
+  }
+})
