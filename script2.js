@@ -1,6 +1,6 @@
 /* globals fetch, moment */
 
-// Helper funfctions
+// Helper functions
 function q (selector) {
   return document.querySelector(selector)
 }
@@ -19,6 +19,7 @@ function postNewNote (note) {
     body: JSON.stringify({
       title: note.title,
       body: note.body,
+      done: false,
       created: moment().format('MMMM Do YYYY, h:mm:ss a')
     })
   }).then(response => response.json())
@@ -33,7 +34,7 @@ function postNewNote (note) {
 
 // **WORK ON THIS**
 function deleteNote (note) {
-  return fetch(`http://localhost:3000/notes/${note.id}`, {
+  return fetch(`http://localhost:3000/notes/'${note.id}'`, {
     method: 'DELETE'
   })
 }
@@ -49,7 +50,7 @@ function createNotesHTML (notes) {
           <p>${note.created}</p>
           <p>${note.body}</p>
         </li>
-        <button id="delete-note">delete</button>
+         <button id="delete-note">delete</button>
       `).join('')}
     </ul>
   `
@@ -95,13 +96,14 @@ q('#notes-form').addEventListener('submit', event => {
   postNewNote(newNote).then(renderNewNote)
 })
 
-//**WORK ON THIS */
+// WORK ON THIS
 q('#notes').addEventListener('click', (event, note) => {
   if (event.target.matches('#delete-note')) {
-    deleteNote(event.target.parentElement.parentElement.dataset.note)
+    deleteNote(event.target.parentElement.dataset.note)
     // const noteEl = q(`${note.id}`)
     // deleteNote(noteEl).then(renderNotes)
-    // TODO send AJAX request to delete todo -- can't get 
-    // TODO remove li with dataset-todo-id equal to id from the DOM
   }
 })
+
+// TODO send AJAX request to delete todo -- can't get 
+// TODO remove li with dataset-todo-id equal to id from the DOM

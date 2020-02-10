@@ -20,6 +20,7 @@
     font-family: 'Quicksand', sans-serif;
     color: darkslategray;
     font-size: 1.8rem;
+    
 }
 
 .form button {
@@ -28,22 +29,30 @@
     color: darkslategray;
     border: .1rem solid darkslategray;
     border-radius: 10px;
-    padding: .5rem;
+    padding: .3rem;
     margin: .25rem;
     background-color: lightcyan;
 }
 
 .form input {
     padding: .5rem;
-    width: 50%;
+    width: 20%;
     font-size: 100%;
-    margin: .5rem;
+    margin: .2rem;
     border: .1rem solid darkslategray;
+}
+
+.form label {
+    margin: .5rem;
 }
 
 .notes {
     font-family: 'Quicksand', sans-serif;
-    color: orangered;
+    color:darkslategray;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    font-size: 1rem;
 
 }
 
