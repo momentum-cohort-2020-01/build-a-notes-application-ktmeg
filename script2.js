@@ -34,10 +34,11 @@ function postNewNote (note) {
 
 // **WORK ON THIS**
 function deleteNote (note) {
-  return fetch(`http://localhost:3000/notes/'${note.id}'`, {
+  return fetch(`http://localhost:3000/notes/${note.ID}`, {
     method: 'DELETE'
-  })
+  }).then(response => q(`${note.id}`).remove())
 }
+
 // Build/Render notes
 // making an UL for the notes //
 function createNotesHTML (notes) {
